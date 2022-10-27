@@ -3,7 +3,7 @@ name: SendToSlack
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/30 * * * *'
+    - cron:  '*/60 * * * *'
 
 # on: push #Used for Debug 
 
@@ -17,6 +17,6 @@ jobs:
         with:
           version: 1.7.0
       - uses: julia-actions/julia-buildpkg@master
-      - run: julia --project src/StackOverflowBot.jl ${{ secrets.JuliaLangSlackEndPoint }}
+      - run: julia --project src/StackOverflowBot.jl ${{ secrets.PagodaSlackEndPoint }}
         
         
