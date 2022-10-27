@@ -1,14 +1,10 @@
 name: RePostToSlack
 
 on:
-  push:
-    branches:
-    - test/
-
-#  schedule:
-#    # * is a special character in YAML so you have to quote this string
-#    - cron:  '0 11 2-30/2 * *' 
-#    # Runs on all even number days at 11 am UTC! 
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 11 2-30/2 * *' 
+    # Runs on all even number days at 11 am UTC! 
 
 # on: push #Used for Debug 
 
@@ -22,5 +18,5 @@ jobs:
         with:
           version: 1.7.0
       - uses: julia-actions/julia-buildpkg@master
-      - run: julia --project src/RePostStackOverflow.jl ${{ secrets.JuliaLangSlackEndPoint }}
+      - run: julia --project src/RePostStackOverflow.jl ${{ secrets.PagodaSlackEndPoint }}
         
