@@ -5,7 +5,7 @@ yesterday = trunc(Int64,floor(Dates.time()))- 86400
 currenttime = Dates.time()
 eightDaysAgo = (yesterday - 604800)
 flag_holder = false
-posts = getrecentquestionsfortag(fromdate = string(eightDaysAgo), todate = string(yesterday))
+posts = getrecentquestionsfortag(tag = "nearprotocol", fromdate = string(eightDaysAgo), todate = string(yesterday))
 
 for question in posts
     
