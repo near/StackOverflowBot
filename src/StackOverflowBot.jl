@@ -6,7 +6,7 @@ endpoint = ARGS[1]  # Where endpoint looks like: "/services/TQVJBU534/BR8C1LMPS/
 
 currenttime = trunc(Int64,floor(Dates.time())) #Get current time in Unix Epcot Time
 thirtyMinsAgo = currenttime - 1800 #rewind 30 minutes since that's the frequency the job run's at.
-posts = getrecentquestionsfortag(fromdate = string(thirtyMinsAgo), todate = string(currenttime))
+posts = getrecentquestionsfortag(tag = "nearprotocol", fromdate = string(thirtyMinsAgo), todate = string(currenttime))
 
 for question in posts
     link = question.link
